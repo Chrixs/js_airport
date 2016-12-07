@@ -3,10 +3,16 @@ describe("Weather", function () {
 
   beforeEach(function() {
     weather = new Weather;
+    });
+
+  it("tests that isStormy returns true", function() {
+    spyOn(weather, 'isStormy').and.returnValue(true);
+    expect(weather.isStormy()).toEqual(true);
   });
 
-  it("tests that weather exists", function() {
-    expect(["Sunny","Stormy"]).toContain(weather.forecast);
+  it("tests that isStormy returns false", function() {
+    spyOn(weather, 'isStormy').and.returnValue(false);
+    expect(weather.isStormy()).toEqual(false);
   });
 
 });
