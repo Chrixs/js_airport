@@ -5,12 +5,12 @@ describe("Airport", function () {
   beforeEach(function() {
     airport = new Airport();
     plane = new Plane();
-    weather = jasmine.createSpyObj('weather', ['isStormy']);
+    // weather = jasmine.createSpyObj('weather', ['isStormy']);   THIS IS A DOUBLE
   });
 
 
   it("should land a plane", function() {
-    spyOn(airport._weather, 'isStormy').and.returnValue(false);
+    spyOn(airport._weather, 'isStormy').and.returnValue(false);    // THIS IS A STUB
     airport.landPlane(plane);
     expect(airport.planes).toContain(plane)
   });
