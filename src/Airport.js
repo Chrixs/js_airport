@@ -2,7 +2,6 @@ function Airport(weather) {
 this._weather = typeof weather !== 'undefined' ? weather : new Weather();
 
 this.planes = [];
-// weather = new Weather();
 }
 
 
